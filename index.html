@@ -2,84 +2,252 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>INTERRUPT | Engineer the First Second</title>
-<meta name="description" content="A visual pattern interrupt system for short-form creators. Get the free 12 Scroll Interrupters guide.">
-<meta name="theme-color" content="#0B0F19">
-<meta property="og:title" content="INTERRUPT - Engineer the First Second">
-<meta property="og:description" content="12 visual pattern interrupts for short-form creators.">
-<meta property="og:type" content="website">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>INTERRUPT - Engineer the First Second</title>
+
+<meta
+  name="description"
+  content="The Visual Pattern Interrupt System for short-form creators. Learn how to engineer the first second and make viewers stop, look and stay."
+>
+
 <style>
 :root{
-  --bg:#0B0F19;--panel:#111827;--panel2:#0e1421;--text:#f7f7f9;--muted:#a8afbd;
-  --orange:#FF6A00;--violet:#7B35FF;--pink:#E6007A;--line:rgba(255,255,255,.10);
-  --max:1160px;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:radial-gradient(circle at 75% 5%,rgba(123,53,255,.13),transparent 30%),var(--bg);
-color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55}
-a{color:inherit;text-decoration:none}
-.container,.wrap{width:min(var(--max),calc(100% - 40px));margin:auto}
-nav{height:76px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
-.logo{font-weight:900;letter-spacing:-1.5px;font-size:25px}.logo span{color:var(--orange)}
-.navlink{color:var(--muted);font-size:14px}
-.btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:12px;padding:14px 21px;font-weight:800;cursor:pointer;transition:.2s transform,.2s box-shadow}
-.btn:hover{transform:translateY(-2px)}
-.btn-primary{background:linear-gradient(100deg,var(--orange),var(--pink));color:white;box-shadow:0 10px 30px rgba(230,0,122,.18)}
-.btn-dark{background:#fff;color:#0B0F19}
-.hero{padding:72px 0 64px;display:grid;grid-template-columns:1.02fr .98fr;gap:54px;align-items:center}
-.eyebrow{color:var(--orange);font-size:12px;font-weight:900;letter-spacing:2.2px;text-transform:uppercase;margin-bottom:16px}
-h1{font-size:clamp(48px,6.4vw,82px);line-height:.96;letter-spacing:-4px;margin:0 0 24px;font-weight:950}
-h1 em{font-style:normal;color:var(--orange)}
-.hero p{font-size:19px;color:#d5d9e1;max-width:650px}
-.actions{display:flex;gap:12px;flex-wrap:wrap;margin:28px 0}
-.micro{font-size:12px;color:var(--muted)}
-.hero-art{position:relative}
-.hero-art img{width:100%;display:block;border-radius:20px;border:1px solid var(--line);box-shadow:0 35px 90px rgba(0,0,0,.45)}
-.section{padding:82px 0;border-top:1px solid var(--line)}
-#proof{padding:82px 0;border-top:1px solid var(--line)}
-.kicker{font-size:12px;text-transform:uppercase;letter-spacing:2px;color:var(--violet);font-weight:900}
-h2{font-size:clamp(34px,4vw,54px);line-height:1.02;letter-spacing:-2px;margin:9px 0 14px}
-.lead{color:var(--muted);font-size:18px;max-width:720px}
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}
-.card{background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.018));border:1px solid var(--line);border-radius:18px;padding:24px}
-.card .num{color:var(--orange);font-weight:900;font-size:13px}
-.card h3{margin:9px 0 7px;font-size:20px}.card p{margin:0;color:var(--muted);font-size:14px}
-#free{padding:82px 0;border-top:1px solid var(--line)}
-.offergrid{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:stretch}
-.offer{background:linear-gradient(145deg,rgba(230,0,122,.13),rgba(123,53,255,.09));border:1px solid rgba(230,0,122,.25);border-radius:22px;padding:34px}
-.checks{display:grid;gap:12px;margin:22px 0}.check{display:flex;gap:10px;color:#dfe3ea}.check b{color:white}
-label{display:block;font-size:12px;font-weight:800;color:#cbd1dc;margin-bottom:8px}
-input{width:100%;padding:14px 15px;background:#080c14;border:1px solid rgba(255,255,255,.14);border-radius:10px;color:white;font-size:16px;outline:none}
-input:focus{border-color:var(--violet)}
-.formrow{display:grid;gap:12px}
-.formnote{font-size:11px;color:#737c8c;margin-top:10px}
-.service{display:grid;grid-template-columns:.9fr 1.1fr;gap:30px;align-items:center}
-.servicebox{border:1px solid rgba(255,106,0,.25);background:linear-gradient(145deg,rgba(255,106,0,.10),rgba(123,53,255,.07));border-radius:22px;padding:34px}
-.pills{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0}.pill{border:1px solid var(--line);padding:8px 11px;border-radius:999px;color:#d4d9e2;font-size:12px}
-.proofgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}
-.proofcard{border-radius:18px;border:1px solid var(--line);overflow:hidden;color:var(--muted);background:rgba(255,255,255,.025);display:flex;flex-direction:column}
-.proofbody{padding:20px}
-.metric{font-size:22px;font-weight:900;color:var(--orange);margin-bottom:8px}
-.links{display:flex;flex-wrap:wrap;gap:12px;align-items:center;font-size:13px;color:var(--muted)}
-.links a{text-decoration:underline;color:#cbd1dc}
-.pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px}
-.price{padding:28px;border-radius:20px;border:1px solid var(--line);background:rgba(255,255,255,.025)}
-.price.featured{border-color:rgba(230,0,122,.55);box-shadow:0 20px 60px rgba(230,0,122,.07)}
-.price h3{font-size:21px;margin:0 0 7px}.price .amount{font-size:36px;font-weight:900;margin:15px 0}.price p{color:var(--muted);font-size:14px}
-ul{padding-left:18px;color:var(--muted);font-size:14px}li{margin:7px 0}
-.cta{padding:82px 0;text-align:center;background:radial-gradient(circle at 50% 0%,rgba(230,0,122,.13),transparent 45%)}
-.cta h2{max-width:760px;margin:10px auto 16px}
-footer{padding:30px 0;border-top:1px solid var(--line);color:#747d8d;font-size:12px;display:flex;justify-content:space-between;gap:20px}
-@media(max-width:850px){
-  .hero,.offergrid,.service{grid-template-columns:1fr}.grid3,.pricing,.proofgrid{grid-template-columns:1fr}
-  h1{letter-spacing:-2.5px}.hero{padding-top:48px}.navlink{display:none}
+  --bg:#0B0F19;
+  --panel:#111827;
+  --panel-soft:#151c2a;
+  --text:#f7f7f9;
+  --muted:#a8afbd;
+  --orange:#FF6A00;
+  --violet:#7B35FF;
+  --pink:#E6007A;
+  --line:rgba(255,255,255,.10);
+  --white:#ffffff;
 }
 
-/* User custom additions */
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  background:
+    radial-gradient(
+      circle at 80% 5%,
+      rgba(123,53,255,.13),
+      transparent 30%
+    ),
+    var(--bg);
+  color:var(--text);
+  font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  line-height:1.55;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+img{
+  max-width:100%;
+}
+
+.wrap{
+  width:min(1160px,calc(100% - 40px));
+  margin:auto;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav{
+  height:74px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  border-bottom:1px solid var(--line);
+}
+
+.logo{
+  font-weight:950;
+  font-size:25px;
+  letter-spacing:-1.5px;
+}
+
+.logo span{
+  color:var(--orange);
+}
+
+.navlinks{
+  display:flex;
+  gap:20px;
+  align-items:center;
+  color:var(--muted);
+  font-size:13px;
+}
+
+.navlinks a:hover{
+  color:var(--white);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn{
+  display:inline-block;
+  border-radius:12px;
+  padding:13px 19px;
+  font-weight:850;
+  transition:.2s ease;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+}
+
+.primary{
+  background:linear-gradient(
+    100deg,
+    var(--orange),
+    var(--pink)
+  );
+  box-shadow:0 12px 35px rgba(230,0,122,.16);
+}
+
+.light{
+  background:white;
+  color:#0B0F19;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+  padding:70px 0 65px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:50px;
+  align-items:center;
+}
+
+.eyebrow,
+.kicker{
+  color:var(--orange);
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+.hero h1{
+  font-size:clamp(50px,6.4vw,82px);
+  line-height:.95;
+  letter-spacing:-4px;
+  margin:15px 0 22px;
+}
+
+.hero h1 em{
+  font-style:normal;
+  color:var(--orange);
+}
+
+.hero p{
+  font-size:19px;
+  color:#d5d9e1;
+  max-width:620px;
+}
+
+.hero img{
+  width:100%;
+  border-radius:18px;
+  border:1px solid var(--line);
+  box-shadow:0 30px 80px #0008;
+}
+
+.actions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin:25px 0;
+}
+
+.small{
+  font-size:12px;
+  color:var(--muted);
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+section{
+  padding:75px 0;
+  border-top:1px solid var(--line);
+}
+
+h2{
+  font-size:clamp(34px,4vw,54px);
+  line-height:1.02;
+  letter-spacing:-2px;
+  margin:9px 0 14px;
+}
+
+.lead{
+  color:var(--muted);
+  font-size:18px;
+  max-width:760px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+  margin-top:30px;
+}
+
+.card,
+.offer,
+.price{
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,.045),
+      rgba(255,255,255,.018)
+    );
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:24px;
+}
+
+.card h3{
+  margin:7px 0;
+}
+
+.card p,
+.price p{
+  color:var(--muted);
+  font-size:14px;
+}
+
+/* =========================
+   FREE GUIDE
+========================= */
+
+.offergrid{
+  display:grid;
+  grid-template-columns:1fr .8fr;
+  gap:20px;
+}
+
 .sendfox-wrap{
-  margin-top:24px;
+  margin-top:25px;
   max-width:560px;
 }
 
@@ -89,367 +257,964 @@ footer{padding:30px 0;border-top:1px solid var(--line);color:#747d8d;font-size:1
   color:var(--muted);
 }
 
-.sendfox-note strong{
-  color:#e7eaf0;
+/* =========================
+   SOCIAL PROOF
+========================= */
+
+.proof-intro{
+  max-width:780px;
 }
 
-.proof-link{
-  display:inline-block;
-  margin-top:5px;
-  font-size:12px;
-  font-weight:800;
-  color:#f7f7f9;
-  text-decoration:underline;
-  text-decoration-color:rgba(255,255,255,.25);
+.proofgrid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  margin-top:35px;
 }
 
-.proofcard img{
+.proofcard{
+  background:#111827;
+  border:1px solid var(--line);
+  border-radius:18px;
+  overflow:hidden;
+}
+
+.proof-image{
   width:100%;
-  height:310px;
-  object-fit:contain;
-  background:#080b12;
+  height:360px;
   display:block;
+  object-fit:contain;
+  object-position:center;
+  background:#080b12;
+}
+
+.proofbody{
+  padding:20px;
+}
+
+.platform{
+  display:inline-block;
+  margin-bottom:8px;
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:1.5px;
+  color:#cbd1dc;
+  border:1px solid var(--line);
+  border-radius:999px;
+  padding:4px 9px;
+}
+
+.metric{
+  color:var(--orange);
+  font-weight:950;
+  font-size:24px;
+  margin-bottom:5px;
+}
+
+.proofbody p{
+  color:var(--muted);
+  font-size:13px;
+  margin:5px 0 0;
+}
+
+.links{
+  margin-top:25px;
+  font-size:12px;
+  color:#cbd1dc;
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  align-items:center;
+}
+
+.links a{
+  text-decoration:underline;
+  text-decoration-color:#ffffff33;
+}
+
+.links a:hover{
+  color:var(--orange);
+  text-decoration-color:var(--orange);
+}
+
+/* =========================
+   DFY SERVICE
+========================= */
+
+.service-list{
+  color:var(--muted);
+  font-size:14px;
+  padding-left:18px;
+}
+
+.service-list li{
+  margin:8px 0;
+}
+
+/* =========================
+   PRICING / OPTIONS
+========================= */
+
+.prices{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+  margin-top:28px;
+}
+
+.price.featured{
+  border-color:rgba(230,0,122,.55);
+  box-shadow:0 15px 50px rgba(230,0,122,.06);
+}
+
+.amount{
+  font-size:34px;
+  font-weight:950;
+  margin:13px 0;
+}
+
+.price ul{
+  color:var(--muted);
+  font-size:14px;
+  padding-left:18px;
+}
+
+.price li{
+  margin:7px 0;
+}
+
+/* =========================
+   FINAL CTA
+========================= */
+
+.cta{
+  text-align:center;
+  background:
+    radial-gradient(
+      circle at 50% 0,
+      rgba(230,0,122,.12),
+      transparent 50%
+    );
+}
+
+.cta .lead{
+  margin-left:auto;
+  margin-right:auto;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+  padding:28px 0;
+  color:#778090;
+  font-size:12px;
+  border-top:1px solid var(--line);
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:850px){
+
+  .hero,
+  .offergrid{
+    grid-template-columns:1fr;
+  }
+
+  .grid,
+  .proofgrid,
+  .prices{
+    grid-template-columns:1fr;
+  }
+
+  .navlinks{
+    display:none;
+  }
+
+  .hero h1{
+    letter-spacing:-2.5px;
+  }
+
+  .proof-image{
+    height:auto;
+    max-height:600px;
+  }
+
+  footer{
+    flex-direction:column;
+  }
 }
 </style>
 </head>
+
 <body>
-<header class="container">
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<div class="wrap">
+
 <nav>
-  <a class="logo" href="#">INTER<span>R</span>UPT</a>
-  <a class="navlink" href="#service">Need it done for you?</a>
-  <a class="btn btn-primary" href="#free">Get the free guide</a>
+
+<a class="logo" href="#">
+  INTER<span>R</span>UPT
+</a>
+
+<div class="navlinks">
+
+<a href="#system">The Method</a>
+
+<a href="#proof">Proof</a>
+
+<a href="#service">DFY</a>
+
+<a class="btn primary" href="#free">
+  Get the free guide
+</a>
+
+</div>
+
 </nav>
-</header>
+
+</div>
+
 
 <main>
-<section class="container hero">
-  <div>
-    <div class="eyebrow">The Visual Pattern Interrupt System</div>
-    <h1>Engineer the first <em>second.</em></h1>
-    <p>12 visual pattern interrupts that make viewers pause, look twice, and want to see what happens next.</p>
-    <div class="actions">
-      <a class="btn btn-primary" href="#free">Get the free guide</a>
-      <a class="btn btn-dark" href="#system">See how it works</a>
-    </div>
-    <div class="micro">Built for short-form creators • Designed around attention psychology • No virality guarantees</div>
-  </div>
-  <div class="hero-art">
-    <img src="assets/interrupt-hero.png" alt="INTERRUPT visual pattern interrupt promotional artwork">
-  </div>
-</section>
 
-<section class="section" id="system">
-<div class="container">
-  <div class="kicker">The idea</div>
-  <h2>Stop asking what to say. Start asking what to interrupt.</h2>
-  <p class="lead">Your content can be useful, beautiful and well edited - and still get ignored. INTERRUPT gives you a repeatable visual vocabulary for engineering the opening moment.</p>
-  <div class="grid3">
-    <div class="card"><div class="num">01 / REALITY VIOLATION</div><h3>Break an expectation</h3><p>Show something that should not be possible: gravity, scale, time, materials or physical rules behaving differently.</p></div>
-    <div class="card"><div class="num">02 / SIGNAL SALIENCE</div><h3>Make one thing impossible to miss</h3><p>Use contrast, movement, color, framing or visual emphasis to make the right element demand attention.</p></div>
-    <div class="card"><div class="num">03 / OPEN LOOP</div><h3>Create a question</h3><p>Introduce a visible mystery that makes the viewer want to know what happens next.</p></div>
-  </div>
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="wrap hero">
+
+<div>
+
+<div class="eyebrow">
+  The Visual Pattern Interrupt System
 </div>
+
+<h1>
+  Engineer the first
+  <em>second.</em>
+</h1>
+
+<p>
+  12 visual pattern interrupts that make viewers pause,
+  look twice, and want to see what happens next.
+</p>
+
+<div class="actions">
+
+<a class="btn primary" href="#free">
+  Get the free guide
+</a>
+
+<a class="btn light" href="#proof">
+  See the proof
+</a>
+
+</div>
+
+<div class="small">
+  Built for short-form creators • Attention-first • No virality guarantees
+</div>
+
+</div>
+
+
+<div>
+
+<!-- HERO IMAGE -->
+<!-- Replace assets/interrupt-hero.png with your actual hero artwork -->
+
+<img
+  src="assets/interrupt-hero.png"
+  alt="INTERRUPT visual pattern interrupt system"
+>
+
+</div>
+
 </section>
 
-<!-- REPLACED #free SECTION -->
+
+<!-- =========================
+     THE SYSTEM
+========================= -->
+
+<section id="system">
+
+<div class="wrap">
+
+<div class="kicker">
+  The idea
+</div>
+
+<h2>
+  Stop asking what to say.
+  Start asking what to interrupt.
+</h2>
+
+<p class="lead">
+  Useful content can still be ignored. INTERRUPT gives you
+  a repeatable visual vocabulary for engineering the opening moment.
+</p>
+
+
+<div class="grid">
+
+<div class="card">
+
+<b>01 / REALITY VIOLATION</b>
+
+<h3>
+  Break an expectation
+</h3>
+
+<p>
+  Show something that should not be possible,
+  should not happen, or should not look the way it does.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<b>02 / SALIENCE</b>
+
+<h3>
+  Make one thing impossible to miss
+</h3>
+
+<p>
+  Use contrast, movement, framing or visual emphasis
+  to direct attention immediately.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<b>03 / OPEN LOOP</b>
+
+<h3>
+  Create a question
+</h3>
+
+<p>
+  Give the viewer an unresolved visual question
+  they want answered.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     FREE GUIDE + SENDFOX
+========================= -->
+
 <section id="free">
-  <div class="wrap offergrid">
 
-    <div class="offer">
-      <div class="kicker">Free guide</div>
+<div class="wrap offergrid">
 
-      <h2>The 12 Scroll Interrupters</h2>
+<div class="offer">
 
-      <p class="lead">
-        A practical introduction to the visual patterns behind
-        attention-grabbing short-form content.
-      </p>
+<div class="kicker">
+  Free guide
+</div>
 
-      <p>
-        Inside: 12 interrupt categories, the psychology behind the pause,
-        a decision framework and a quick-reference matrix.
-      </p>
+<h2>
+  The 12 Scroll Interrupters
+</h2>
 
-      <!-- SENDFOX FORM -->
-      <div class="sendfox-wrap">
-        <script
-          src="https://cdn.sendfox.com/js/embed.js"
-          data-form="1yx64e"
-          data-api="https://sendfox.com"
-          async>
-        </script>
-      </div>
+<p class="lead">
+  A practical introduction to the visual patterns
+  behind attention-grabbing short-form content.
+</p>
 
-      <p class="sendfox-note">
-        <strong>Free guide.</strong>
-        Enter your email to get the guide. Unsubscribe anytime.
-      </p>
-    </div>
+<p>
+  Inside you'll find 12 interrupt categories,
+  the psychology behind the pause, a decision framework,
+  and a quick-reference matrix.
+</p>
 
-    <div class="offer">
-      <div class="kicker">What happens next</div>
 
-      <h3>Get the guide. Then put it to work.</h3>
+<!-- SENDFOX FORM -->
 
-      <p class="lead" style="font-size:15px">
-        The free guide gives you the foundation. Then choose how far
-        you want to go.
-      </p>
+<div class="sendfox-wrap">
 
-      <p>
-        <strong>01 / FREE</strong><br>
-        Get the 12 Scroll Interrupters.
-      </p>
+<script
+  src="https://cdn.sendfox.com/js/embed.js"
+  data-form="1yx64e"
+  data-api="https://sendfox.com"
+  async>
+</script>
 
-      <p>
-        <strong>02 / DIY</strong><br>
-        Go deeper with the complete INTERRUPT system.
-      </p>
+</div>
 
-      <p>
-        <strong>03 / DFY</strong><br>
-        Let us help plan, create and manage your social content.
-      </p>
-    </div>
 
-  </div>
+<p class="sendfox-note">
+  Free guide. No spam. Just the guide and occasional
+  useful creator resources.
+</p>
+
+</div>
+
+
+<div class="offer">
+
+<div class="kicker">
+  Start here
+</div>
+
+<h3>
+  Get the guide. Then put it to work.
+</h3>
+
+<p class="lead" style="font-size:15px">
+  The free guide gives you the foundation.
+  Then choose how far you want to go.
+</p>
+
+<p>
+  <strong>01 / FREE</strong><br>
+  Get the 12 Scroll Interrupters.
+</p>
+
+<p>
+  <strong>02 / DIY</strong><br>
+  Go deeper with the complete INTERRUPT system.
+</p>
+
+<p>
+  <strong>03 / DFY</strong><br>
+  Let us help plan, create and manage your social content.
+</p>
+
+</div>
+
+</div>
+
 </section>
 
-<!-- REPLACED #proof SECTION -->
+
+<!-- =========================
+     SOCIAL PROOF
+========================= -->
+
 <section id="proof">
-  <div class="wrap">
 
-    <div class="kicker">Interrupt in the wild</div>
+<div class="wrap">
 
-    <h2>Real performance. Real examples.</h2>
-
-    <p class="lead">
-      These analytics snapshots come from real short-form content
-      supplied for this product. They demonstrate observed performance,
-      not guaranteed outcomes.
-    </p>
-
-    <div class="proofgrid">
-
-      <!-- THREADS - HIGHEST VIEWS -->
-      <div class="proofcard">
-
-        <img
-          src="assets/photo_2026-09-03_15-03-00.jpg"
-          alt="Threads analytics screenshot showing 574,688 views">
-
-        <div class="proofbody">
-
-          <div class="metric">
-            574,688 views
-          </div>
-
-          <p>
-            <strong>Threads - highest-view example.</strong>
-            A visual shock built around the woodpecker footage.
-            The analytics snapshot shows 614 follows and 20,252
-            profile visits.
-          </p>
-
-          <a
-            class="proof-link"
-            href="https://www.threads.com/share/BBhO2g7AqG/"
-            target="_blank"
-            rel="noopener">
-            View example →
-          </a>
-
-        </div>
-
-      </div>
-
-      <!-- THREADS - SECOND HIGHEST -->
-      <div class="proofcard">
-
-        <img
-          src="assets/photo_2026-09-03_15-02-58.jpg"
-          alt="Threads analytics screenshot showing 21,247 views">
-
-        <div class="proofbody">
-
-          <div class="metric">
-            21,247 views
-          </div>
-
-          <p>
-            <strong>Threads - second highest-view example.</strong>
-            Threat curiosity and visual tension built around the
-            cone snail. The snapshot shows 62 follows and
-            1,220 profile visits.
-          </p>
-
-          <a
-            class="proof-link"
-            href="https://www.threads.com/share/BAm8AWpNjW/"
-            target="_blank"
-            rel="noopener">
-            View example →
-          </a>
-
-        </div>
-
-      </div>
-
-      <!-- INSTAGRAM -->
-      <div class="proofcard">
-
-        <img
-          src="assets/photo_2026-09-03_15-02-33 (2).jpg"
-          alt="Instagram analytics screenshot showing 5,990 views">
-
-        <div class="proofbody">
-
-          <div class="metric">
-            5,990 views
-          </div>
-
-          <p>
-            <strong>Instagram example.</strong>
-            A cone snail close-up that generated strong viewing
-            behavior, with 19 seconds average watch time and
-            18 follows shown in the analytics.
-          </p>
-
-          <a
-            class="proof-link"
-            href="https://www.instagram.com/reel/Dcx83S1Dnyy/"
-            target="_blank"
-            rel="noopener">
-            View example →
-          </a>
-
-        </div>
-
-      </div>
-
-    </div>
-
-    <div style="margin-top:28px" class="links">
-
-      <span>Explore more examples:</span>
-
-      <a
-        href="https://www.youtube.com/shorts/RLaop88kKsk"
-        target="_blank"
-        rel="noopener">
-        YouTube 1
-      </a>
-
-      <a
-        href="https://www.youtube.com/shorts/bhbayxos9dY"
-        target="_blank"
-        rel="noopener">
-        YouTube 2
-      </a>
-
-      <a
-        href="https://www.youtube.com/shorts/KXrV_9t4-_o"
-        target="_blank"
-        rel="noopener">
-        YouTube 3
-      </a>
-
-      <a
-        href="https://www.instagram.com/reel/Dcx83S1Dnyy/"
-        target="_blank"
-        rel="noopener">
-        Instagram
-      </a>
-
-      <a
-        href="https://www.threads.com/share/BBhO2g7AqG/"
-        target="_blank"
-        rel="noopener">
-        Threads 1
-      </a>
-
-      <a
-        href="https://www.threads.com/share/BAm8AWpNjW/"
-        target="_blank"
-        rel="noopener">
-        Threads 2
-      </a>
-
-      <a
-        href="https://www.threads.com/share/_qA7RXtbA/"
-        target="_blank"
-        rel="noopener">
-        Threads 3
-      </a>
-
-    </div>
-
-  </div>
-</section>
-
-<section class="section" id="service">
-<div class="container service">
-  <div>
-    <div class="kicker">Done-for-you</div>
-    <h2>Want the content handled for you?</h2>
-    <p class="lead">If you know you should be posting consistently but do not want another system to manage, we can help run your social media presence for you.</p>
-    <div class="pills">
-      <span class="pill">Content planning</span><span class="pill">Post creation</span><span class="pill">Captions</span><span class="pill">Publishing</span><span class="pill">Content calendar</span><span class="pill">Performance review</span>
-    </div>
-    <a class="btn btn-primary" href="#contact">Ask about social media management</a>
-  </div>
-  <div class="servicebox">
-    <h3>Three ways to work with INTERRUPT</h3>
-    <p><b>1. Free</b> - Start with the 12 Scroll Interrupters guide.</p>
-    <p><b>2. DIY</b> - Upgrade to the full INTERRUPT system and build your own attention-first content.</p>
-    <p><b>3. DFY</b> - Let our team help plan, create and manage your social content.</p>
-  </div>
+<div class="kicker">
+  Interrupt in the wild
 </div>
+
+<h2>
+  Real performance. Real examples.
+</h2>
+
+<p class="lead proof-intro">
+  These analytics snapshots come from real short-form
+  content supplied for this product. They demonstrate
+  observed performance, not guaranteed outcomes.
+</p>
+
+
+<div class="proofgrid">
+
+
+<!-- =========================
+     PROOF #1 - THREADS
+========================= -->
+
+<div class="proofcard">
+
+<!--
+  PLACE YOUR IMAGE HERE
+
+  Filename:
+  photo_2026-09-03_15-03-00.jpg
+
+  Location:
+  assets/photo_2026-09-03_15-03-00.jpg
+-->
+
+<img
+  class="proof-image"
+  src="assets/photo_2026-09-03_15-03-00.jpg"
+  alt="Threads analytics showing 574,688 views"
+>
+
+<div class="proofbody">
+
+<span class="platform">
+  Threads
+</span>
+
+<div class="metric">
+  574,688 views
+</div>
+
+<p>
+  Woodpecker visual shock.
+  614 follows and 20,252 profile visits
+  shown in the analytics snapshot.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- =========================
+     PROOF #2 - THREADS
+========================= -->
+
+<div class="proofcard">
+
+<!--
+  PLACE YOUR IMAGE HERE
+
+  Filename:
+  photo_2026-09-03_15-02-58.jpg
+
+  Location:
+  assets/photo_2026-09-03_15-02-58.jpg
+-->
+
+<img
+  class="proof-image"
+  src="assets/photo_2026-09-03_15-02-58.jpg"
+  alt="Threads analytics showing 21,247 views"
+>
+
+<div class="proofbody">
+
+<span class="platform">
+  Threads
+</span>
+
+<div class="metric">
+  21,247 views
+</div>
+
+<p>
+  Cone snail / threat curiosity.
+  62 follows and 1,220 profile visits
+  shown in the analytics snapshot.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- =========================
+     PROOF #3 - INSTAGRAM
+========================= -->
+
+<div class="proofcard">
+
+<!--
+  PLACE YOUR IMAGE HERE
+
+  Filename:
+  photo_2026-09-03_15-02-33 (2).jpg
+
+  Location:
+  assets/photo_2026-09-03_15-02-33 (2).jpg
+-->
+
+<img
+  class="proof-image"
+  src="assets/photo_2026-09-03_15-02-33 (2).jpg"
+  alt="Instagram analytics showing 5,990 views"
+>
+
+<div class="proofbody">
+
+<span class="platform">
+  Instagram
+</span>
+
+<div class="metric">
+  5,990 views
+</div>
+
+<p>
+  Cone snail close-up.
+  19 seconds average watch time
+  and 18 follows shown.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- =========================
+     EXAMPLE LINKS
+========================= -->
+
+<div class="links">
+
+<span>
+  Watch the examples:
+</span>
+
+<a
+  href="https://www.youtube.com/shorts/RLaop88kKsk"
+  target="_blank"
+  rel="noopener"
+>
+  YouTube 1
+</a>
+
+<a
+  href="https://www.youtube.com/shorts/bhbayxos9dY"
+  target="_blank"
+  rel="noopener"
+>
+  YouTube 2
+</a>
+
+<a
+  href="https://www.youtube.com/shorts/KXrV_9t4-_o"
+  target="_blank"
+  rel="noopener"
+>
+  YouTube 3
+</a>
+
+<a
+  href="https://www.instagram.com/reel/Dcx83S1Dnyy/"
+  target="_blank"
+  rel="noopener"
+>
+  Instagram Reel
+</a>
+
+<a
+  href="https://www.threads.com/share/BBhO2g7AqG/"
+  target="_blank"
+  rel="noopener"
+>
+  Threads 1
+</a>
+
+<a
+  href="https://www.threads.com/share/BAm8AWpNjW/"
+  target="_blank"
+  rel="noopener"
+>
+  Threads 2
+</a>
+
+<a
+  href="https://www.threads.com/share/_qA7RXtbA/"
+  target="_blank"
+  rel="noopener"
+>
+  Threads 3
+</a>
+
+</div>
+
+</div>
+
 </section>
 
-<section class="section">
-<div class="container">
-  <div class="kicker">The offer ladder</div>
-  <h2>Choose your level of help.</h2>
-  <div class="pricing">
-    <div class="price">
-      <h3>FREE</h3><div class="amount">$0</div>
-      <p>Get the framework and start experimenting.</p>
-      <a class="btn btn-dark" href="#free">Get the guide</a>
-    </div>
-    <div class="price featured">
-      <h3>INTERRUPT SYSTEM</h3><div class="amount">$47+</div>
-      <p>The full visual pattern interrupt system for creators who want a repeatable method.</p>
-      <ul><li>12 deep-dive libraries</li><li>Technique formulas</li><li>AI execution guidance</li><li>Decision framework</li></ul>
-      <a class="btn btn-primary" href="#contact">See the full offer</a>
-    </div>
-    <div class="price">
-      <h3>DONE FOR YOU</h3><div class="amount">Custom</div>
-      <p>For creators and businesses that want consistent social content without managing the process themselves.</p>
-      <ul><li>Strategy</li><li>Content production</li><li>Publishing support</li><li>Performance optimization</li></ul>
-      <a class="btn btn-dark" href="#contact">Talk to us</a>
-    </div>
-  </div>
+
+<!-- =========================
+     DFY SOCIAL MEDIA SERVICE
+========================= -->
+
+<section id="service">
+
+<div class="wrap offergrid">
+
+<div>
+
+<div class="kicker">
+  Done for you
 </div>
+
+<h2>
+  Want the content handled for you?
+</h2>
+
+<p class="lead">
+  If you know you should be posting consistently
+  but don't want another system to manage, we can
+  help plan, create and manage your social media presence.
+</p>
+
+<div class="actions">
+
+<a
+  class="btn primary"
+  href="mailto:YOUR-EMAIL@example.com?subject=INTERRUPT%20DFY%20Social%20Media"
+>
+  Ask about DFY social media
+</a>
+
+</div>
+
+</div>
+
+
+<div class="offer">
+
+<h3>
+  DFY social media management
+</h3>
+
+<ul class="service-list">
+
+<li>Content planning</li>
+
+<li>Creative direction</li>
+
+<li>Post creation</li>
+
+<li>Captions</li>
+
+<li>Publishing support</li>
+
+<li>Performance review</li>
+
+</ul>
+
+<p class="small">
+  Replace YOUR-EMAIL@example.com with your actual
+  service email before publishing.
+</p>
+
+</div>
+
+</div>
+
 </section>
 
-<section class="cta" id="contact">
-<div class="container">
-  <div class="kicker">Start here</div>
-  <h2>Engineer the first second. Then give them a reason to stay.</h2>
-  <p class="lead" style="margin:0 auto 26px">Get the free guide, explore the full INTERRUPT system, or ask about done-for-you social media management.</p>
-  <div class="actions" style="justify-content:center">
-    <a class="btn btn-primary" href="#free">Get the free guide</a>
-    <a class="btn btn-dark" href="mailto:YOUR-EMAIL@example.com?subject=INTERRUPT%20Social%20Media%20Management">Ask about DFY service</a>
-  </div>
+
+<!-- =========================
+     THREE WAYS TO WORK WITH US
+========================= -->
+
+<section>
+
+<div class="wrap">
+
+<div class="kicker">
+  Three ways to work with us
 </div>
+
+<h2>
+  Choose your level of help.
+</h2>
+
+
+<div class="prices">
+
+
+<!-- FREE -->
+
+<div class="price">
+
+<h3>
+  FREE
+</h3>
+
+<div class="amount">
+  $0
+</div>
+
+<p>
+  Start with the 12 Scroll Interrupters.
+</p>
+
+<a
+  class="btn light"
+  href="#free"
+>
+  Get the guide
+</a>
+
+</div>
+
+
+<!-- DIY -->
+
+<div class="price featured">
+
+<h3>
+  DIY
+</h3>
+
+<div class="amount">
+  $47+
+</div>
+
+<p>
+  The complete INTERRUPT system for creators
+  who want the method.
+</p>
+
+<ul>
+
+<li>
+  12 deep-dive libraries
+</li>
+
+<li>
+  Formulas and execution guidance
+</li>
+
+<li>
+  Decision framework
+</li>
+
+<li>
+  Quick-reference tools
+</li>
+
+</ul>
+
+<a
+  class="btn primary"
+  href="mailto:YOUR-EMAIL@example.com?subject=INTERRUPT%20DIY%20System"
+>
+  Ask about the system
+</a>
+
+</div>
+
+
+<!-- DFY -->
+
+<div class="price">
+
+<h3>
+  DFY
+</h3>
+
+<div class="amount">
+  Custom
+</div>
+
+<p>
+  For creators and businesses that want
+  social content managed for them.
+</p>
+
+<ul>
+
+<li>
+  Strategy
+</li>
+
+<li>
+  Production
+</li>
+
+<li>
+  Publishing support
+</li>
+
+<li>
+  Performance review
+</li>
+
+</ul>
+
+<a
+  class="btn light"
+  href="#service"
+>
+  Talk to us
+</a>
+
+</div>
+
+</div>
+
+</div>
+
 </section>
+
+
+<!-- =========================
+     FINAL CTA
+========================= -->
+
+<section class="cta">
+
+<div class="wrap">
+
+<div class="kicker">
+  Start here
+</div>
+
+<h2>
+  Engineer the first second.
+  Then give them a reason to stay.
+</h2>
+
+<p class="lead">
+  Get the free guide, explore the full system,
+  or ask about done-for-you social media management.
+</p>
+
+<a
+  class="btn primary"
+  href="#free"
+>
+  Get the free guide
+</a>
+
+</div>
+
+</section>
+
 </main>
 
-<footer class="container">
-  <span>© 2026 INTERRUPT. Engineer the first second.</span>
-  <span>Replace placeholder links and form endpoint before publishing.</span>
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<div class="wrap">
+
+<footer>
+
+<span>
+  © 2026 INTERRUPT
+</span>
+
+<span>
+  Attention-first content for short-form creators.
+</span>
+
 </footer>
+
+</div>
 
 </body>
 </html>
