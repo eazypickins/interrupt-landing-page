@@ -237,7 +237,7 @@ h2{
 }
 
 /* =========================
-   FREE GUIDE
+   FREE GUIDE / GHL FORM
 ========================= */
 
 .offergrid{
@@ -246,12 +246,26 @@ h2{
   gap:20px;
 }
 
-.sendfox-wrap{
+.ghl-form-wrap{
   margin-top:25px;
+  width:100%;
   max-width:560px;
+  background:#111827;
+  border:1px solid var(--line);
+  border-radius:20px;
+  overflow:hidden;
+  min-height:520px;
 }
 
-.sendfox-note{
+.ghl-form-wrap iframe{
+  width:100%;
+  min-height:520px;
+  border:none;
+  border-radius:20px;
+  display:block;
+}
+
+.form-note{
   margin-top:12px;
   font-size:12px;
   color:var(--muted);
@@ -352,7 +366,7 @@ h2{
 }
 
 /* =========================
-   PRICING / OPTIONS
+   PRICING
 ========================= */
 
 .prices{
@@ -363,8 +377,8 @@ h2{
 }
 
 .price.featured{
-  border-color:rgba(230,0,122,.55);
-  box-shadow:0 15px 50px rgba(230,0,122,.06);
+  border-color:rgba(255,106,0,.60);
+  box-shadow:0 15px 50px rgba(255,106,0,.08);
 }
 
 .amount{
@@ -444,6 +458,15 @@ footer{
   .proof-image{
     height:auto;
     max-height:600px;
+  }
+
+  .ghl-form-wrap{
+    max-width:100%;
+    min-height:560px;
+  }
+
+  .ghl-form-wrap iframe{
+    min-height:560px;
   }
 
   footer{
@@ -530,9 +553,6 @@ footer{
 
 
 <div>
-
-<!-- HERO IMAGE -->
-<!-- Replace assets/interrupt-hero.png with your actual hero artwork -->
 
 <img
   src="assets/interrupt-hero.png"
@@ -624,7 +644,7 @@ footer{
 
 
 <!-- =========================
-     FREE GUIDE + SENDFOX
+     FREE GUIDE + GHL
 ========================= -->
 
 <section id="free">
@@ -653,23 +673,37 @@ footer{
 </p>
 
 
-<!-- SENDFOX FORM -->
+<!-- =========================
+     GHL FORM
+========================= -->
 
-<div class="sendfox-wrap">
+<div class="ghl-form-wrap">
 
-<script
-  src="https://cdn.sendfox.com/js/embed.js"
-  data-form="1yx64e"
-  data-api="https://sendfox.com"
-  async>
-</script>
+<iframe
+  src="https://link.msgsndr.com/widget/form/bQrEIXOfhBg5FmiSU6VN"
+  id="inline-bQrEIXOfhBg5FmiSU6VN"
+  data-layout="{'id':'INLINE'}"
+  data-trigger-type="alwaysShow"
+  data-trigger-value=""
+  data-activation-type="alwaysActivated"
+  data-activation-value=""
+  data-deactivation-type="neverDeactivate"
+  data-deactivation-value=""
+  data-form-name="INTERRUPT - Free Guide"
+  data-height="undefined"
+  data-layout-iframe-id="inline-bQrEIXOfhBg5FmiSU6VN"
+  data-form-id="bQrEIXOfhBg5FmiSU6VN"
+  data-cookie-consent="true"
+  data-cookie-consent-provider="auto"
+  title="INTERRUPT - Free Guide">
+</iframe>
 
 </div>
 
+<script src="https://link.msgsndr.com/js/form_embed.js"></script>
 
-<p class="sendfox-note">
-  Free guide. No spam. Just the guide and occasional
-  useful creator resources.
+<p class="form-note">
+  Free resources. No spam. Just the guide and occasional useful creator resources.
 </p>
 
 </div>
@@ -697,7 +731,7 @@ footer{
 
 <p>
   <strong>02 / DIY</strong><br>
-  Go deeper with the complete INTERRUPT system.
+  Go deeper with the complete INTERRUPT system for $27.
 </p>
 
 <p>
@@ -744,20 +778,11 @@ footer{
 
 <div class="proofcard">
 
-<!--
-  PLACE YOUR IMAGE HERE
-
-  Filename:
-  photo_2026-09-03_15-03-00.jpg
-
-  Location:
-  assets/photo_2026-09-03_15-03-00.jpg
--->
-
 <img
   class="proof-image"
   src="assets/photo_2026-09-03_15-03-00.jpg"
   alt="Threads analytics showing 574,688 views"
+  loading="lazy"
 >
 
 <div class="proofbody">
@@ -787,20 +812,11 @@ footer{
 
 <div class="proofcard">
 
-<!--
-  PLACE YOUR IMAGE HERE
-
-  Filename:
-  photo_2026-09-03_15-02-58.jpg
-
-  Location:
-  assets/photo_2026-09-03_15-02-58.jpg
--->
-
 <img
   class="proof-image"
   src="assets/photo_2026-09-03_15-02-58.jpg"
   alt="Threads analytics showing 21,247 views"
+  loading="lazy"
 >
 
 <div class="proofbody">
@@ -830,20 +846,11 @@ footer{
 
 <div class="proofcard">
 
-<!--
-  PLACE YOUR IMAGE HERE
-
-  Filename:
-  photo_2026-09-03_15-02-33 (2).jpg
-
-  Location:
-  assets/photo_2026-09-03_15-02-33 (2).jpg
--->
-
 <img
   class="proof-image"
-  src="assets/photo_2026-09-03_15-02-33 (2).jpg"
+  src="assets/photo_2026-09-03_15-02-33%20(2).jpg"
   alt="Instagram analytics showing 5,990 views"
+  loading="lazy"
 >
 
 <div class="proofbody">
@@ -1002,11 +1009,6 @@ footer{
 
 </ul>
 
-<p class="small">
-  Replace denorgerald@gmail.com with your actual
-  service email before publishing.
-</p>
-
 </div>
 
 </div>
@@ -1069,12 +1071,12 @@ footer{
 </h3>
 
 <div class="amount">
-  $47+
+  $27
 </div>
 
 <p>
   The complete INTERRUPT system for creators
-  who want the method.
+  who want a repeatable attention-first method.
 </p>
 
 <ul>
@@ -1095,13 +1097,19 @@ footer{
   Quick-reference tools
 </li>
 
+<li>
+  Real-world proof and examples
+</li>
+
 </ul>
 
 <a
   class="btn primary"
-  href="mailto:denorgerald@gmail.com?subject=INTERRUPT%20DIY%20System"
+  href="https://denorgerald.gumroad.com/l/interrupt"
+  target="_blank"
+  rel="noopener"
 >
-  Ask about the system
+  Get INTERRUPT for $27
 </a>
 
 </div>
@@ -1178,9 +1186,11 @@ footer{
 </h2>
 
 <p class="lead">
-  Get the free guide, explore the full system,
+  Get the free guide, explore the complete $27 system,
   or ask about done-for-you social media management.
 </p>
+
+<div class="actions" style="justify-content:center">
 
 <a
   class="btn primary"
@@ -1188,6 +1198,17 @@ footer{
 >
   Get the free guide
 </a>
+
+<a
+  class="btn light"
+  href="https://denorgerald.gumroad.com/l/interrupt"
+  target="_blank"
+  rel="noopener"
+>
+  Get the complete system - $27
+</a>
+
+</div>
 
 </div>
 
