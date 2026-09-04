@@ -20,7 +20,7 @@ html{scroll-behavior:smooth}
 body{margin:0;background:radial-gradient(circle at 75% 5%,rgba(123,53,255,.13),transparent 30%),var(--bg);
 color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55}
 a{color:inherit;text-decoration:none}
-.container{width:min(var(--max),calc(100% - 40px));margin:auto}
+.container,.wrap{width:min(var(--max),calc(100% - 40px));margin:auto}
 nav{height:76px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
 .logo{font-weight:900;letter-spacing:-1.5px;font-size:25px}.logo span{color:var(--orange)}
 .navlink{color:var(--muted);font-size:14px}
@@ -38,6 +38,7 @@ h1 em{font-style:normal;color:var(--orange)}
 .hero-art{position:relative}
 .hero-art img{width:100%;display:block;border-radius:20px;border:1px solid var(--line);box-shadow:0 35px 90px rgba(0,0,0,.45)}
 .section{padding:82px 0;border-top:1px solid var(--line)}
+#proof{padding:82px 0;border-top:1px solid var(--line)}
 .kicker{font-size:12px;text-transform:uppercase;letter-spacing:2px;color:var(--violet);font-weight:900}
 h2{font-size:clamp(34px,4vw,54px);line-height:1.02;letter-spacing:-2px;margin:9px 0 14px}
 .lead{color:var(--muted);font-size:18px;max-width:720px}
@@ -45,10 +46,10 @@ h2{font-size:clamp(34px,4vw,54px);line-height:1.02;letter-spacing:-2px;margin:9p
 .card{background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.018));border:1px solid var(--line);border-radius:18px;padding:24px}
 .card .num{color:var(--orange);font-weight:900;font-size:13px}
 .card h3{margin:9px 0 7px;font-size:20px}.card p{margin:0;color:var(--muted);font-size:14px}
-.free{display:grid;grid-template-columns:1fr .75fr;gap:28px;align-items:stretch}
+#free{padding:82px 0;border-top:1px solid var(--line)}
+.offergrid{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:stretch}
 .offer{background:linear-gradient(145deg,rgba(230,0,122,.13),rgba(123,53,255,.09));border:1px solid rgba(230,0,122,.25);border-radius:22px;padding:34px}
 .checks{display:grid;gap:12px;margin:22px 0}.check{display:flex;gap:10px;color:#dfe3ea}.check b{color:white}
-.emailbox{background:#0d131f;border:1px solid var(--line);border-radius:22px;padding:28px}
 label{display:block;font-size:12px;font-weight:800;color:#cbd1dc;margin-bottom:8px}
 input{width:100%;padding:14px 15px;background:#080c14;border:1px solid rgba(255,255,255,.14);border-radius:10px;color:white;font-size:16px;outline:none}
 input:focus{border-color:var(--violet)}
@@ -57,8 +58,12 @@ input:focus{border-color:var(--violet)}
 .service{display:grid;grid-template-columns:.9fr 1.1fr;gap:30px;align-items:center}
 .servicebox{border:1px solid rgba(255,106,0,.25);background:linear-gradient(145deg,rgba(255,106,0,.10),rgba(123,53,255,.07));border-radius:22px;padding:34px}
 .pills{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0}.pill{border:1px solid var(--line);padding:8px 11px;border-radius:999px;color:#d4d9e2;font-size:12px}
-.proof{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}
-.proofcard{min-height:190px;border-radius:18px;border:1px dashed rgba(255,255,255,.20);display:flex;align-items:center;justify-content:center;text-align:center;padding:22px;color:var(--muted);background:rgba(255,255,255,.015)}
+.proofgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}
+.proofcard{border-radius:18px;border:1px solid var(--line);overflow:hidden;color:var(--muted);background:rgba(255,255,255,.025);display:flex;flex-direction:column}
+.proofbody{padding:20px}
+.metric{font-size:22px;font-weight:900;color:var(--orange);margin-bottom:8px}
+.links{display:flex;flex-wrap:wrap;gap:12px;align-items:center;font-size:13px;color:var(--muted)}
+.links a{text-decoration:underline;color:#cbd1dc}
 .pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px}
 .price{padding:28px;border-radius:20px;border:1px solid var(--line);background:rgba(255,255,255,.025)}
 .price.featured{border-color:rgba(230,0,122,.55);box-shadow:0 20px 60px rgba(230,0,122,.07)}
@@ -68,10 +73,44 @@ ul{padding-left:18px;color:var(--muted);font-size:14px}li{margin:7px 0}
 .cta h2{max-width:760px;margin:10px auto 16px}
 footer{padding:30px 0;border-top:1px solid var(--line);color:#747d8d;font-size:12px;display:flex;justify-content:space-between;gap:20px}
 @media(max-width:850px){
- .hero,.free,.service{grid-template-columns:1fr}.grid3,.pricing,.proof{grid-template-columns:1fr}
- h1{letter-spacing:-2.5px}.hero{padding-top:48px}.navlink{display:none}
+  .hero,.offergrid,.service{grid-template-columns:1fr}.grid3,.pricing,.proofgrid{grid-template-columns:1fr}
+  h1{letter-spacing:-2.5px}.hero{padding-top:48px}.navlink{display:none}
 }
-.sendfox-wrap{margin-top:24px;max-width:560px}.sendfox-note{margin-top:12px;font-size:12px;color:var(--muted)}.sendfox-note strong{color:#e7eaf0}</style>
+
+/* User custom additions */
+.sendfox-wrap{
+  margin-top:24px;
+  max-width:560px;
+}
+
+.sendfox-note{
+  margin-top:12px;
+  font-size:12px;
+  color:var(--muted);
+}
+
+.sendfox-note strong{
+  color:#e7eaf0;
+}
+
+.proof-link{
+  display:inline-block;
+  margin-top:5px;
+  font-size:12px;
+  font-weight:800;
+  color:#f7f7f9;
+  text-decoration:underline;
+  text-decoration-color:rgba(255,255,255,.25);
+}
+
+.proofcard img{
+  width:100%;
+  height:310px;
+  object-fit:contain;
+  background:#080b12;
+  display:block;
+}
+</style>
 </head>
 <body>
 <header class="container">
@@ -112,43 +151,240 @@ footer{padding:30px 0;border-top:1px solid var(--line);color:#747d8d;font-size:1
 </div>
 </section>
 
-<section class="section" id="free">
-<div class="container free">
-  <div class="offer">
-    <div class="kicker">Free guide</div>
-    <h2>The 12 Scroll Interrupters</h2>
-    <p class="lead">A practical introduction to the visual patterns behind attention-grabbing short-form content.</p>
-    <div class="checks">
-      <div class="check">✓ <span><b>12 interrupt categories</b> you can apply to your own content</span></div>
-      <div class="check">✓ <span><b>The psychology behind the pause</b> so you understand why the patterns work</span></div>
-      <div class="check">✓ <span><b>A decision framework</b> to help you choose the right interrupt</span></div>
-      <div class="check">✓ <span><b>A quick-reference matrix</b> for faster creative decisions</span></div>
+<!-- REPLACED #free SECTION -->
+<section id="free">
+  <div class="wrap offergrid">
+
+    <div class="offer">
+      <div class="kicker">Free guide</div>
+
+      <h2>The 12 Scroll Interrupters</h2>
+
+      <p class="lead">
+        A practical introduction to the visual patterns behind
+        attention-grabbing short-form content.
+      </p>
+
+      <p>
+        Inside: 12 interrupt categories, the psychology behind the pause,
+        a decision framework and a quick-reference matrix.
+      </p>
+
+      <!-- SENDFOX FORM -->
+      <div class="sendfox-wrap">
+        <script
+          src="https://cdn.sendfox.com/js/embed.js"
+          data-form="1yx64e"
+          data-api="https://sendfox.com"
+          async>
+        </script>
+      </div>
+
+      <p class="sendfox-note">
+        <strong>Free guide.</strong>
+        Enter your email to get the guide. Unsubscribe anytime.
+      </p>
     </div>
-    <div class="sendfox-wrap">
-      <script src="https://cdn.sendfox.com/js/embed.js" data-form="1yx64e" data-api="https://sendfox.com" async></script>
+
+    <div class="offer">
+      <div class="kicker">What happens next</div>
+
+      <h3>Get the guide. Then put it to work.</h3>
+
+      <p class="lead" style="font-size:15px">
+        The free guide gives you the foundation. Then choose how far
+        you want to go.
+      </p>
+
+      <p>
+        <strong>01 / FREE</strong><br>
+        Get the 12 Scroll Interrupters.
+      </p>
+
+      <p>
+        <strong>02 / DIY</strong><br>
+        Go deeper with the complete INTERRUPT system.
+      </p>
+
+      <p>
+        <strong>03 / DFY</strong><br>
+        Let us help plan, create and manage your social content.
+      </p>
     </div>
-    <div class="sendfox-note"><strong>Free guide.</strong> Enter your email to get the guide. Unsubscribe anytime.</div>
+
   </div>
-  <div class="emailbox">
-    <div class="kicker">Get the free guide</div>
-    <h3>Put it in your inbox.</h3>
-    <p class="lead" style="font-size:15px">The form above captures your email through SendFox. After successful signup, send subscribers to <strong>thanks.html</strong> so they can access the guide.</p>
-    <div class="formnote">No spam. Just the guide and occasional useful creator resources.</div>
-  </div>
-</div>
 </section>
 
-<section class="section">
-<div class="container">
-  <div class="kicker">See it in action</div>
-  <h2>Real examples beat claims.</h2>
-  <p class="lead">Use this section for your viral post examples. Add screenshots, embedded posts or links here so prospects can see the principles in action.</p>
-  <div class="proof">
-    <div class="proofcard">Viral example #1<br><small>Replace with screenshot or post embed</small></div>
-    <div class="proofcard">Viral example #2<br><small>Replace with screenshot or post embed</small></div>
-    <div class="proofcard">Viral example #3<br><small>Replace with screenshot or post embed</small></div>
+<!-- REPLACED #proof SECTION -->
+<section id="proof">
+  <div class="wrap">
+
+    <div class="kicker">Interrupt in the wild</div>
+
+    <h2>Real performance. Real examples.</h2>
+
+    <p class="lead">
+      These analytics snapshots come from real short-form content
+      supplied for this product. They demonstrate observed performance,
+      not guaranteed outcomes.
+    </p>
+
+    <div class="proofgrid">
+
+      <!-- THREADS - HIGHEST VIEWS -->
+      <div class="proofcard">
+
+        <img
+          src="assets/photo_2026-09-03_15-03-00.jpg"
+          alt="Threads analytics screenshot showing 574,688 views">
+
+        <div class="proofbody">
+
+          <div class="metric">
+            574,688 views
+          </div>
+
+          <p>
+            <strong>Threads - highest-view example.</strong>
+            A visual shock built around the woodpecker footage.
+            The analytics snapshot shows 614 follows and 20,252
+            profile visits.
+          </p>
+
+          <a
+            class="proof-link"
+            href="https://www.threads.com/share/BBhO2g7AqG/"
+            target="_blank"
+            rel="noopener">
+            View example →
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- THREADS - SECOND HIGHEST -->
+      <div class="proofcard">
+
+        <img
+          src="assets/photo_2026-09-03_15-02-58.jpg"
+          alt="Threads analytics screenshot showing 21,247 views">
+
+        <div class="proofbody">
+
+          <div class="metric">
+            21,247 views
+          </div>
+
+          <p>
+            <strong>Threads - second highest-view example.</strong>
+            Threat curiosity and visual tension built around the
+            cone snail. The snapshot shows 62 follows and
+            1,220 profile visits.
+          </p>
+
+          <a
+            class="proof-link"
+            href="https://www.threads.com/share/BAm8AWpNjW/"
+            target="_blank"
+            rel="noopener">
+            View example →
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- INSTAGRAM -->
+      <div class="proofcard">
+
+        <img
+          src="assets/photo_2026-09-03_15-02-33 (2).jpg"
+          alt="Instagram analytics screenshot showing 5,990 views">
+
+        <div class="proofbody">
+
+          <div class="metric">
+            5,990 views
+          </div>
+
+          <p>
+            <strong>Instagram example.</strong>
+            A cone snail close-up that generated strong viewing
+            behavior, with 19 seconds average watch time and
+            18 follows shown in the analytics.
+          </p>
+
+          <a
+            class="proof-link"
+            href="https://www.instagram.com/reel/Dcx83S1Dnyy/"
+            target="_blank"
+            rel="noopener">
+            View example →
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div style="margin-top:28px" class="links">
+
+      <span>Explore more examples:</span>
+
+      <a
+        href="https://www.youtube.com/shorts/RLaop88kKsk"
+        target="_blank"
+        rel="noopener">
+        YouTube 1
+      </a>
+
+      <a
+        href="https://www.youtube.com/shorts/bhbayxos9dY"
+        target="_blank"
+        rel="noopener">
+        YouTube 2
+      </a>
+
+      <a
+        href="https://www.youtube.com/shorts/KXrV_9t4-_o"
+        target="_blank"
+        rel="noopener">
+        YouTube 3
+      </a>
+
+      <a
+        href="https://www.instagram.com/reel/Dcx83S1Dnyy/"
+        target="_blank"
+        rel="noopener">
+        Instagram
+      </a>
+
+      <a
+        href="https://www.threads.com/share/BBhO2g7AqG/"
+        target="_blank"
+        rel="noopener">
+        Threads 1
+      </a>
+
+      <a
+        href="https://www.threads.com/share/BAm8AWpNjW/"
+        target="_blank"
+        rel="noopener">
+        Threads 2
+      </a>
+
+      <a
+        href="https://www.threads.com/share/_qA7RXtbA/"
+        target="_blank"
+        rel="noopener">
+        Threads 3
+      </a>
+
+    </div>
+
   </div>
-</div>
 </section>
 
 <section class="section" id="service">
@@ -215,13 +451,5 @@ footer{padding:30px 0;border-top:1px solid var(--line);color:#747d8d;font-size:1
   <span>Replace placeholder links and form endpoint before publishing.</span>
 </footer>
 
-<script>
-function demoSubmit(e){
-  e.preventDefault();
-  const note=document.getElementById('formnote');
-  note.textContent='Form is ready. Connect the action URL to your email platform before publishing.';
-  return false;
-}
-</script>
 </body>
 </html>
