@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>INTERRUPT | Engineer the First Second</title>
+<meta name="description" content="A visual pattern interrupt system for short-form creators. Get the free 12 Scroll Interrupters guide.">
+<meta name="theme-color" content="#0B0F19">
+<meta property="og:title" content="INTERRUPT - Engineer the First Second">
+<meta property="og:description" content="12 visual pattern interrupts for short-form creators.">
+<meta property="og:type" content="website">
+<style>
+:root{
+  --bg:#0B0F19;--panel:#111827;--panel2:#0e1421;--text:#f7f7f9;--muted:#a8afbd;
+  --orange:#FF6A00;--violet:#7B35FF;--pink:#E6007A;--line:rgba(255,255,255,.10);
+  --max:1160px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(circle at 75% 5%,rgba(123,53,255,.13),transparent 30%),var(--bg);
+color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55}
+a{color:inherit;text-decoration:none}
+.container{width:min(var(--max),calc(100% - 40px));margin:auto}
+nav{height:76px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
+.logo{font-weight:900;letter-spacing:-1.5px;font-size:25px}.logo span{color:var(--orange)}
+.navlink{color:var(--muted);font-size:14px}
+.btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:12px;padding:14px 21px;font-weight:800;cursor:pointer;transition:.2s transform,.2s box-shadow}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:linear-gradient(100deg,var(--orange),var(--pink));color:white;box-shadow:0 10px 30px rgba(230,0,122,.18)}
+.btn-dark{background:#fff;color:#0B0F19}
+.hero{padding:72px 0 64px;display:grid;grid-template-columns:1.02fr .98fr;gap:54px;align-items:center}
+.eyebrow{color:var(--orange);font-size:12px;font-weight:900;letter-spacing:2.2px;text-transform:uppercase;margin-bottom:16px}
+h1{font-size:clamp(48px,6.4vw,82px);line-height:.96;letter-spacing:-4px;margin:0 0 24px;font-weight:950}
+h1 em{font-style:normal;color:var(--orange)}
+.hero p{font-size:19px;color:#d5d9e1;max-width:650px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin:28px 0}
+.micro{font-size:12px;color:var(--muted)}
+.hero-art{position:relative}
+.hero-art img{width:100%;display:block;border-radius:20px;border:1px solid var(--line);box-shadow:0 35px 90px rgba(0,0,0,.45)}
+.section{padding:82px 0;border-top:1px solid var(--line)}
+.kicker{font-size:12px;text-transform:uppercase;letter-spacing:2px;color:var(--violet);font-weight:900}
+h2{font-size:clamp(34px,4vw,54px);line-height:1.02;letter-spacing:-2px;margin:9px 0 14px}
+.lead{color:var(--muted);font-size:18px;max-width:720px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}
+.card{background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.018));border:1px solid var(--line);border-radius:18px;padding:24px}
+.card .num{color:var(--orange);font-weight:900;font-size:13px}
+.card h3{margin:9px 0 7px;font-size:20px}.card p{margin:0;color:var(--muted);font-size:14px}
+.free{display:grid;grid-template-columns:1fr .75fr;gap:28px;align-items:stretch}
+.offer{background:linear-gradient(145deg,rgba(230,0,122,.13),rgba(123,53,255,.09));border:1px solid rgba(230,0,122,.25);border-radius:22px;padding:34px}
+.checks{display:grid;gap:12px;margin:22px 0}.check{display:flex;gap:10px;color:#dfe3ea}.check b{color:white}
+.emailbox{background:#0d131f;border:1px solid var(--line);border-radius:22px;padding:28px}
+label{display:block;font-size:12px;font-weight:800;color:#cbd1dc;margin-bottom:8px}
+input{width:100%;padding:14px 15px;background:#080c14;border:1px solid rgba(255,255,255,.14);border-radius:10px;color:white;font-size:16px;outline:none}
+input:focus{border-color:var(--violet)}
+.formrow{display:grid;gap:12px}
+.formnote{font-size:11px;color:#737c8c;margin-top:10px}
+.service{display:grid;grid-template-columns:.9fr 1.1fr;gap:30px;align-items:center}
+.servicebox{border:1px solid rgba(255,106,0,.25);background:linear-gradient(145deg,rgba(255,106,0,.10),rgba(123,53,255,.07));border-radius:22px;padding:34px}
+.pills{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0}.pill{border:1px solid var(--line);padding:8px 11px;border-radius:999px;color:#d4d9e2;font-size:12px}
+.proof{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}
+.proofcard{min-height:190px;border-radius:18px;border:1px dashed rgba(255,255,255,.20);display:flex;align-items:center;justify-content:center;text-align:center;padding:22px;color:var(--muted);background:rgba(255,255,255,.015)}
+.pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px}
+.price{padding:28px;border-radius:20px;border:1px solid var(--line);background:rgba(255,255,255,.025)}
+.price.featured{border-color:rgba(230,0,122,.55);box-shadow:0 20px 60px rgba(230,0,122,.07)}
+.price h3{font-size:21px;margin:0 0 7px}.price .amount{font-size:36px;font-weight:900;margin:15px 0}.price p{color:var(--muted);font-size:14px}
+ul{padding-left:18px;color:var(--muted);font-size:14px}li{margin:7px 0}
+.cta{padding:82px 0;text-align:center;background:radial-gradient(circle at 50% 0%,rgba(230,0,122,.13),transparent 45%)}
+.cta h2{max-width:760px;margin:10px auto 16px}
+footer{padding:30px 0;border-top:1px solid var(--line);color:#747d8d;font-size:12px;display:flex;justify-content:space-between;gap:20px}
+@media(max-width:850px){
+ .hero,.free,.service{grid-template-columns:1fr}.grid3,.pricing,.proof{grid-template-columns:1fr}
+ h1{letter-spacing:-2.5px}.hero{padding-top:48px}.navlink{display:none}
+}
+.sendfox-wrap{margin-top:24px;max-width:560px}.sendfox-note{margin-top:12px;font-size:12px;color:var(--muted)}.sendfox-note strong{color:#e7eaf0}</style>
+</head>
+<body>
+<header class="container">
+<nav>
+  <a class="logo" href="#">INTER<span>R</span>UPT</a>
+  <a class="navlink" href="#service">Need it done for you?</a>
+  <a class="btn btn-primary" href="#free">Get the free guide</a>
+</nav>
+</header>
+
+<main>
+<section class="container hero">
+  <div>
+    <div class="eyebrow">The Visual Pattern Interrupt System</div>
+    <h1>Engineer the first <em>second.</em></h1>
+    <p>12 visual pattern interrupts that make viewers pause, look twice, and want to see what happens next.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="#free">Get the free guide</a>
+      <a class="btn btn-dark" href="#system">See how it works</a>
+    </div>
+    <div class="micro">Built for short-form creators • Designed around attention psychology • No virality guarantees</div>
+  </div>
+  <div class="hero-art">
+    <img src="assets/interrupt-hero.png" alt="INTERRUPT visual pattern interrupt promotional artwork">
+  </div>
+</section>
+
+<section class="section" id="system">
+<div class="container">
+  <div class="kicker">The idea</div>
+  <h2>Stop asking what to say. Start asking what to interrupt.</h2>
+  <p class="lead">Your content can be useful, beautiful and well edited - and still get ignored. INTERRUPT gives you a repeatable visual vocabulary for engineering the opening moment.</p>
+  <div class="grid3">
+    <div class="card"><div class="num">01 / REALITY VIOLATION</div><h3>Break an expectation</h3><p>Show something that should not be possible: gravity, scale, time, materials or physical rules behaving differently.</p></div>
+    <div class="card"><div class="num">02 / SIGNAL SALIENCE</div><h3>Make one thing impossible to miss</h3><p>Use contrast, movement, color, framing or visual emphasis to make the right element demand attention.</p></div>
+    <div class="card"><div class="num">03 / OPEN LOOP</div><h3>Create a question</h3><p>Introduce a visible mystery that makes the viewer want to know what happens next.</p></div>
+  </div>
+</div>
+</section>
+
+<section class="section" id="free">
+<div class="container free">
+  <div class="offer">
+    <div class="kicker">Free guide</div>
+    <h2>The 12 Scroll Interrupters</h2>
+    <p class="lead">A practical introduction to the visual patterns behind attention-grabbing short-form content.</p>
+    <div class="checks">
+      <div class="check">✓ <span><b>12 interrupt categories</b> you can apply to your own content</span></div>
+      <div class="check">✓ <span><b>The psychology behind the pause</b> so you understand why the patterns work</span></div>
+      <div class="check">✓ <span><b>A decision framework</b> to help you choose the right interrupt</span></div>
+      <div class="check">✓ <span><b>A quick-reference matrix</b> for faster creative decisions</span></div>
+    </div>
+    <div class="sendfox-wrap">
+      <script src="https://cdn.sendfox.com/js/embed.js" data-form="1yx64e" data-api="https://sendfox.com" async></script>
+    </div>
+    <div class="sendfox-note"><strong>Free guide.</strong> Enter your email to get the guide. Unsubscribe anytime.</div>
+  </div>
+  <div class="emailbox">
+    <div class="kicker">Get the free guide</div>
+    <h3>Put it in your inbox.</h3>
+    <p class="lead" style="font-size:15px">The form above captures your email through SendFox. After successful signup, send subscribers to <strong>thanks.html</strong> so they can access the guide.</p>
+    <div class="formnote">No spam. Just the guide and occasional useful creator resources.</div>
+  </div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+  <div class="kicker">See it in action</div>
+  <h2>Real examples beat claims.</h2>
+  <p class="lead">Use this section for your viral post examples. Add screenshots, embedded posts or links here so prospects can see the principles in action.</p>
+  <div class="proof">
+    <div class="proofcard">Viral example #1<br><small>Replace with screenshot or post embed</small></div>
+    <div class="proofcard">Viral example #2<br><small>Replace with screenshot or post embed</small></div>
+    <div class="proofcard">Viral example #3<br><small>Replace with screenshot or post embed</small></div>
+  </div>
+</div>
+</section>
+
+<section class="section" id="service">
+<div class="container service">
+  <div>
+    <div class="kicker">Done-for-you</div>
+    <h2>Want the content handled for you?</h2>
+    <p class="lead">If you know you should be posting consistently but do not want another system to manage, we can help run your social media presence for you.</p>
+    <div class="pills">
+      <span class="pill">Content planning</span><span class="pill">Post creation</span><span class="pill">Captions</span><span class="pill">Publishing</span><span class="pill">Content calendar</span><span class="pill">Performance review</span>
+    </div>
+    <a class="btn btn-primary" href="#contact">Ask about social media management</a>
+  </div>
+  <div class="servicebox">
+    <h3>Three ways to work with INTERRUPT</h3>
+    <p><b>1. Free</b> - Start with the 12 Scroll Interrupters guide.</p>
+    <p><b>2. DIY</b> - Upgrade to the full INTERRUPT system and build your own attention-first content.</p>
+    <p><b>3. DFY</b> - Let our team help plan, create and manage your social content.</p>
+  </div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+  <div class="kicker">The offer ladder</div>
+  <h2>Choose your level of help.</h2>
+  <div class="pricing">
+    <div class="price">
+      <h3>FREE</h3><div class="amount">$0</div>
+      <p>Get the framework and start experimenting.</p>
+      <a class="btn btn-dark" href="#free">Get the guide</a>
+    </div>
+    <div class="price featured">
+      <h3>INTERRUPT SYSTEM</h3><div class="amount">$47+</div>
+      <p>The full visual pattern interrupt system for creators who want a repeatable method.</p>
+      <ul><li>12 deep-dive libraries</li><li>Technique formulas</li><li>AI execution guidance</li><li>Decision framework</li></ul>
+      <a class="btn btn-primary" href="#contact">See the full offer</a>
+    </div>
+    <div class="price">
+      <h3>DONE FOR YOU</h3><div class="amount">Custom</div>
+      <p>For creators and businesses that want consistent social content without managing the process themselves.</p>
+      <ul><li>Strategy</li><li>Content production</li><li>Publishing support</li><li>Performance optimization</li></ul>
+      <a class="btn btn-dark" href="#contact">Talk to us</a>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="cta" id="contact">
+<div class="container">
+  <div class="kicker">Start here</div>
+  <h2>Engineer the first second. Then give them a reason to stay.</h2>
+  <p class="lead" style="margin:0 auto 26px">Get the free guide, explore the full INTERRUPT system, or ask about done-for-you social media management.</p>
+  <div class="actions" style="justify-content:center">
+    <a class="btn btn-primary" href="#free">Get the free guide</a>
+    <a class="btn btn-dark" href="mailto:YOUR-EMAIL@example.com?subject=INTERRUPT%20Social%20Media%20Management">Ask about DFY service</a>
+  </div>
+</div>
+</section>
+</main>
+
+<footer class="container">
+  <span>© 2026 INTERRUPT. Engineer the first second.</span>
+  <span>Replace placeholder links and form endpoint before publishing.</span>
+</footer>
+
+<script>
+function demoSubmit(e){
+  e.preventDefault();
+  const note=document.getElementById('formnote');
+  note.textContent='Form is ready. Connect the action URL to your email platform before publishing.';
+  return false;
+}
+</script>
+</body>
+</html>
